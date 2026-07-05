@@ -9,8 +9,8 @@ import {
   MdDelete
 } from "react-icons/md";
 import Swal from "sweetalert2";
-import { FiEye, FiEyeOff, FiMail, FiLock } from "react-icons/fi";
 
+import { FiUser, FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
 
 
 function App() {
@@ -42,14 +42,14 @@ function App() {
   });
 
   const handleAuth = async () => {
-
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-if (!emailRegex.test(authForm.email)) {
-  toast.error("Please enter a valid email");
-  return;
-}
-setAuthLoading(true);
+  if (!emailRegex.test(authForm.email)) {
+    toast.error("Please enter a valid email");
+    return;
+  }
+
+  setAuthLoading(true);
 
   try {
     let response;
@@ -77,15 +77,18 @@ setAuthLoading(true);
         ? "Login successful"
         : "Account created successfully"
     );
-  } catch (err) {
-    toast.error(
-      err.response?.data?.message || "Authentication failed"
-    );
-  } finally {
+  } catch (error) {
+  console.log(error);
+
+  alert(
+    error.response?.data?.message ||
+    error.response?.data?.error ||
+    error.message
+  );
+} finally {
     setAuthLoading(false);
   }
 };
-
   const toggleDarkMode = () => {
   setDarkMode(!darkMode);
   localStorage.setItem("theme", !darkMode ? "dark" : "light");
@@ -242,19 +245,25 @@ setAuthLoading(true);
 
           <p>Welcome to To Do List Dashboard</p>
 
-          {authMode === "register" && (
-            <input
-              type="text"
-              placeholder="Name"
-              value={authForm.name}
-              onChange={(e) =>
-                setAuthForm({
-                  ...authForm,
-                  name: e.target.value,
-                })
-              }
-            />
-          )}
+                {authMode === "register" && (
+                <div className="float-input">
+       <FiUser className="float-icon" />
+
+<input
+  type="text"
+  required
+  value={authForm.name}
+  onChange={(e) =>
+    setAuthForm({
+      ...authForm,
+      name: e.target.value,
+    })
+  }
+/>
+
+        <label>Name</label>
+      </div>
+                )}
 
   <div className="float-input">
   <FiMail className="float-icon" />

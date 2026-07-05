@@ -534,513 +534,348 @@ body {
   }
 
 }
+/* ================= LOGIN PAGE ================= */
+
 .auth-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #111827, #2563eb);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+
+  background:
+    radial-gradient(circle at 85% 10%, rgba(37, 99, 235, 0.75), transparent 28%),
+    radial-gradient(circle at 0% 70%, rgba(29, 78, 216, 0.55), transparent 35%),
+    linear-gradient(135deg, #020617, #071533, #020617);
 }
 
 .auth-card {
   width: 100%;
   max-width: 430px;
-  background: white;
+  padding: 38px 36px;
   border-radius: 24px;
-  padding: 35px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
   text-align: center;
+
+  background: rgba(2, 8, 25, 0.78);
+  border: 1px solid rgba(37, 99, 235, 0.45);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(37, 99, 235, 0.22);
+
+  backdrop-filter: blur(12px);
 }
 
 .auth-card h1 {
-  font-weight: 800;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 900;
   margin-bottom: 8px;
 }
 
 .auth-card p {
-  color: #64748b;
-  margin-bottom: 25px;
+  color: #b8c5e2;
+  margin-bottom: 28px;
 }
 
-.auth-card input {
-  width: 100%;
-  height: 52px;
-  border: 1px solid #dbe3ef;
-  border-radius: 14px;
-  padding: 0 16px;
-  margin-bottom: 14px;
-  outline: none;
-}
-
-.auth-card input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
-}
-
-.auth-card button {
-  width: 100%;
-  height: 52px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #7c3aed, #2563eb);
-  color: white;
-  font-weight: 700;
-  margin-top: 8px;
-}
-
-.auth-card span {
-  display: block;
-  margin-top: 18px;
-  color: #64748b;
-}
-
-.auth-card .link-btn {
-  background: transparent;
-  color: #2563eb;
-  height: auto;
-  margin-top: 6px;
-}
-
-.logout-btn {
-  margin-top: 8px;
-  background: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 6px 12px;
-  font-size: 12px;
-}
-/* ========================= */
-/* Theme Toggle Button */
-/* ========================= */
-
-.theme-toggle {
-  margin-left: auto;
-  width: 42px;
-  height: 42px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  transform: rotate(20deg) scale(1.08);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* ========================= */
-/* Dark Mode */
-/* ========================= */
-
-.dark {
-  background: #0f172a;
-  color: #f8fafc;
-}
-
-.dark .main-area {
-  background: #0f172a;
-}
-
-.dark .panel,
-.dark .stat-box,
-.dark .search-card,
-.dark .task-card {
-  background: #1e293b;
-  color: #f8fafc;
-}
-
-.dark input,
-.dark select {
-  background: #334155;
-  color: white;
-  border: 1px solid #475569;
-}
-
-.dark input::placeholder {
-  color: #cbd5e1;
-}
-
-.dark .task-info p,
-.dark .footer,
-.dark .panel-header p {
-  color: #cbd5e1;
-}
-
-.dark .sidebar {
-  background: linear-gradient(180deg, #020617, #000000);
-}
-
-.dark .task-card {
-  border: 1px solid #334155;
-}
-
-.dark .task-check {
-  background: #334155;
-  border-color: #475569;
-}
-
-.dark .search-card input {
-  background: transparent;
-}
-
-.dark .priority.low {
-  background: #14532d;
-}
-
-.dark .priority.medium {
-  background: #78350f;
-}
-
-.dark .priority.high {
-  background: #7f1d1d;
-}
-
-.task-card {
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
-  border-radius: 18px;
-  transition: 0.3s ease;
-}
-.task-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 28px 65px rgba(37, 99, 235, 0.35) !important;
-}
-
-.task-card::before {
-  content: "";
-  width: 6px;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: #3b82f6;
-}
-
-.task-card:has(.priority.high)::before {
-  background: #ef4444;
-}
-
-.task-card:has(.priority.medium)::before {
-  background: #f59e0b;
-}
-
-.task-card:has(.priority.low)::before {
-  background: #22c55e;
-}
-
-.task-card:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
-}
-
-.task-actions button {
-  transition: 0.25s ease;
-}
-
-.task-actions button:hover {
-  transform: scale(1.12) rotate(3deg);
-}
-
-.task-details span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-
-.task-card:has(.priority.high) {
-  border-left-color: #ef4444 !important;
-}
-
-.task-card:has(.priority.medium) {
-  border-left-color: #f59e0b !important;
-}
-
-.task-card:has(.priority.low) {
-  border-left-color: #22c55e !important;
-}
-
-.dark .task-card {
-  background: linear-gradient(135deg, #1e293b, #0f172a) !important;
-}
-.task-actions{
-    display:flex;
-    justify-content:flex-end;
-    gap:18px;
-    margin-top:20px;
-}
-
-.action-btn{
-    width:58px;
-    height:58px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-
-    font-size:24px;
-    font-weight:bold;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    transition:.3s;
-
-    color:#fff;
-}
-
-.action-btn:hover{
-    transform:translateY(-6px) scale(1.1);
-}
-
-.done{
-    background:#22c55e;
-    box-shadow:0 0 20px rgba(34,197,94,.35);
-}
-
-.edit{
-    background:#f59e0b;
-    box-shadow:0 0 20px rgba(245,158,11,.35);
-}
-
-.delete{
-    background:#ef4444;
-    box-shadow:0 0 20px rgba(239,68,68,.35);
-}
-
-
-.password-field{
-    position:relative;
-}
-
-.password-field input{
-    width:100%;
-    padding-right:45px;
-}
-
-.password-field {
-  position: relative;
-  width: 100%;
-}
-
-.password-field input {
-  width: 100%;
-  padding: 12px 45px 12px 15px; /* مساحة للعين من اليمين */
-  box-sizing: border-box;
-}
-
-.password-toggle {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-
-  color: #777;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-}
-
-.password-toggle:hover {
-  color: #2563eb;
-}
-
-.password-toggle:hover{
-    color:#2563eb;
-}
-
-
-.password-field input {
-  width: 100%;
-  padding-right: 70px;
-}
-
-.password-field input{
-    width: 100%;
-    padding-right: 45px;
-}
-
-
-.password-toggle {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent !important;
-  border: none !important;
-  color: #2563eb !important;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0 !important;
-  width: 45px !important;
-  height: 20px !important;
-  z-index: 5;
-}
-.auth-card .password-field .password-toggle {
-  position: absolute !important;
-  right: 14px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-
-  width: 24px !important;
-  height: 24px !important;
-
-  background: transparent !important;
-  background-image: none !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  color: #777 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-.auth-card button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.spinner-border-sm {
-    margin: 0;
-}
-
-.input-group,
-.password-field {
-    position: relative;
-}
-
-.input-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 20px;
-}
-
-.input-group input,
-.password-field input {
-    padding-left: 45px;
-    padding-right: 45px;
-}
-
-.password-toggle {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: #666;
-}
-
-.auth-card .input-group,
-.auth-card .password-field {
-  width: 100% !important;
-  height: 50px !important;
-  position: relative !important;
-  margin-bottom: 15px !important;
-}
-
-.auth-card .input-group input,
-.auth-card .password-field input {
-  width: 100% !important;
-  height: 50px !important;
-  padding: 0 45px !important;
-  border-radius: 12px !important;
-  box-sizing: border-box !important;
-}
-
-.auth-card .input-icon {
-  position: absolute !important;
-  left: 16px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
-.auth-card .password-toggle {
-  top: 50% !important;
-  right: 16px !important;
-}
-
+/* Floating inputs */
 
 .float-input {
   position: relative;
   width: 100%;
-  margin-bottom: 18px;
+  height: 58px;
+  margin-bottom: 22px;
 }
 
 .float-input input {
   width: 100%;
-  height: 52px;
-  padding: 0 45px;
-  border: 2px solid #d1d5db;
-  border-radius: 14px;
-  background: transparent;
+  height: 58px;
+  padding: 0 58px 0 76px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  background: rgba(255, 255, 255, 0.045);
+
+  color: #ffffff;
+  font-size: 15px;
   outline: none;
+  transition: 0.25s ease;
 }
+
+.float-input input::placeholder {
+  color: #8fa3cc;
+  opacity: 1;
+}
+
+.float-input input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.35);
+}
+
+/* icon box */
 
 .float-icon {
   position: absolute;
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #777;
-  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(13, 27, 51, 0.95);
+  color: #3b82f6;
+  font-size: 21px;
+  z-index: 3;
 }
+
+/* label فوق الحقل */
 
 .float-input label {
   position: absolute;
-  left: 45px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #777;
-  background: #fff;
-  padding: 0 8px;
-  transition: 0.25s ease;
+  left: 72px;
+  top: -10px;
+
+  padding: 0 10px;
+  background: #061126;
+
+  color: #60a5fa;
+  font-size: 14px;
+  font-weight: 700;
+
+  border-radius: 8px;
   pointer-events: none;
 }
 
-.float-input input:focus ~ label,
-.float-input input:valid ~ label {
-  top: 0;
-  left: 35px;
-  font-size: 13px;
-  color: white;
-  background: black;
-  border-radius: 12px;
-  padding: 2px 8px;
-}
+/* eye icon */
 
 .float-input .password-toggle {
   position: absolute !important;
-  right: 16px !important;
+  right: 18px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
+
+  width: 26px !important;
+  height: 26px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  color: #777 !important;
+
+  color: #3b82f6 !important;
+  font-size: 20px !important;
+  cursor: pointer;
   padding: 0 !important;
+}
+
+/* Login Button */
+
+.auth-card > button:not(.link-btn) {
+  width: 100%;
+  height: 56px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.38);
+}
+
+.auth-card > button:not(.link-btn):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.48);
+}
+
+/* Create Account */
+
+.auth-card .link-btn {
+  background: transparent !important;
+  color: #60a5fa !important;
+  height: auto !important;
+  margin-top: 16px !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-card .link-btn:hover {
+  color: #93c5fd !important;
+  text-decoration: underline;
+}
+
+/* ===== Final floating input fix ===== */
+
+.float-input {
+  height: 56px !important;
+  margin-bottom: 24px !important;
+}
+
+.float-icon {
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 17px !important;
+  left: 18px !important;
+}
+
+.float-input input {
+  height: 56px !important;
+  padding-left: 62px !important;
+  padding-right: 50px !important;
+}
+
+.float-input label {
+  top: 50% !important;
+  left: 62px !important;
+  transform: translateY(-50%) !important;
+  background: transparent !important;
+  color: #8fa3cc !important;
+  font-size: 15px !important;
+  transition: 0.25s ease !important;
+}
+
+/* لما نضغط أو نكتب يطلع فوق */
+.float-input input:focus ~ label,
+.float-input input:valid ~ label {
+  top: -9px !important;
+  left: 70px !important;
+  transform: none !important;
+  color: #60a5fa !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  background: #061126 !important;
+  padding: 0 8px !important;
+  border-radius: 8px !important;
+}
+
+.float-input .password-toggle {
+  top: 50% !important;
+  right: 18px !important;
+  transform: translateY(-50%) !important;
+  font-size: 16px !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+
+
+/* ===== Dashboard Dark Luxury Theme ===== */
+
+.dark .app-shell,
+.dark .main-area {
+  background: #020617 !important;
+  color: #f8fafc !important;
+}
+
+.dark .sidebar {
+  background: linear-gradient(180deg, #070b1f, #020617) !important;
+  border-right: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.theme-toggle {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid rgba(99, 102, 241, 0.45) !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 10px 18px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.theme-toggle::after {
+  content: " Dark Mode";
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+/* logout */
+.logout-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #fb7185 !important;
+  border: 1px solid #fb7185 !important;
+  font-weight: 800;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #ef4444 !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* task card */
+.task-card {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px;
+  border-radius: 22px !important;
+  padding: 24px !important;
+  background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.dark .task-card {
+  background: linear-gradient(135deg, #111827, #1e1b4b) !important;
+  border: 1px solid rgba(99, 102, 241, 0.35) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* actions to right */
+.task-actions {
+  margin-left: auto !important;
+  display: flex !important;
+  gap: 14px !important;
+  justify-content: flex-end !important;
+}
+
+/* priority colors */
+.task-card:has(.priority.high) {
+  border-left: 6px solid #ef4444 !important;
+}
+
+.task-card:has(.priority.medium) {
+  border-left: 6px solid #f59e0b !important;
+}
+
+.task-card:has(.priority.low) {
+  border-left: 6px solid #22c55e !important;
+}
+
+.task-card:has(.priority.high) .priority {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.task-card:has(.priority.medium) .priority {
+  background: rgba(245, 158, 11, 0.16) !important;
+  color: #f59e0b !important;
+}
+
+.task-card:has(.priority.low) .priority {
+  background: rgba(34, 197, 94, 0.16) !important;
+  color: #22c55e !important;
 }
